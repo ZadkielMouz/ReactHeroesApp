@@ -12,7 +12,6 @@ export const PrivateRoute = ({children}) => {
     //Guardar la ultima busqueda realizada, si no, pondrá una ruta de origen
     const lastPath = pathname + search;
     localStorage.setItem('lastPath', lastPath);
-    console.log("re-render")
 
     return ( state.logged ) ? children : <Navigate to="/login" /> 
 }
