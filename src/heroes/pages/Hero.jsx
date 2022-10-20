@@ -32,7 +32,7 @@ export const Hero = () => {
                 onAnimationEnd={animate}
             >
                 <img
-                    src={`./assets/${hero.id}.jpg`}
+                    src={`./assets/${hero.id}.jpg`} //Modificado para github Pages
                     alt={`${hero.superhero}`}
                     className='img-thumbnail'
                 />

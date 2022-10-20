@@ -1,10 +1,10 @@
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { DcPage, MarvelPage, HeroesPage, SearchPage, Hero } from "../heroes";
 import { LoginPage } from "../auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     [
         {
             path: '/',

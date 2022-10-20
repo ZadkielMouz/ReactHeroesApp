@@ -15,7 +15,7 @@ export const HeroCard = ({
 
     const [animation, setAnimation] = useState(true);
 
-    const heroUrl = useMemo(() => `./assets/${id}.jpg`, [id]);
+    const heroUrl = useMemo(() => `./assets/${id}.jpg`, [id]); //Modificado para github Pages
     return (
         <div
             className={`col${animation ? ' animate__animated animate__fadeIn' : ''}`}
