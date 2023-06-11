@@ -32,21 +32,21 @@ export const Navbar = () => {
 
                     <NavLink
                         className={({isActive}) => `nav-item nav-link${isActive ? ' active' : ''}`}
-                        to="/marvel"
+                        to="/heroes/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink
                         className={({isActive}) => `nav-item nav-link${isActive ? ' active' : ''}`}
-                        to="/dc"
+                        to="/heroes/dc"
                     >
                         DC
                     </NavLink>
 
                     <NavLink
                         className={({isActive}) => `nav-item nav-link${isActive ? ' active' : ''}`}
-                        to="/search"
+                        to="/heroes/search"
                     >
                         Search
                     </NavLink>

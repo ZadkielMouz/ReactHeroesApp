@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "../auth"
 
 
 
-export const PublicRoute = ( {children} ) => {
+export const PublicRoute = () => {
     const {state} = useContext(AuthContext);
-
-    return ( !state.logged ? children : <Navigate to="/" /> );
+    
+    return ( !state.logged ? <Outlet /> : <Navigate to="/" /> );
 }

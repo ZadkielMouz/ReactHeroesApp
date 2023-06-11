@@ -1,5 +1,5 @@
 import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
-import { DcPage, MarvelPage, HeroesPage, SearchPage, Hero } from "../heroes";
+import { DcPage, MarvelPage, SearchPage, Hero } from "../heroes";
 import { LoginPage } from "../auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -8,45 +8,50 @@ const router = createHashRouter(
     [
         {
             path: '/',
-            element:
-                <PrivateRoute>
-                    <HeroesPage />
-                </PrivateRoute>,
+            element: <PrivateRoute />,
             children: [
                 {
-                    path: '/',
-                    element: <Navigate to={"/marvel"} />
+                    index: true,
+                    element: <Navigate to={'heroes/marvel'} replace={true} />
                 },
                 {
-                    path: '*',
-                    element: <Navigate to={'/'} />
-                },
-                {
-                    path: 'marvel',
+                    path: 'heroes/marvel',
                     element: <MarvelPage />
                 },
                 {
-                    path: 'dc',
+                    path: 'heroes/dc',
                     element: <DcPage />
                 },
                 {
-                    path: 'search',
+                    path: 'heroes/search',
                     element: <SearchPage />
                 },
                 {
-                    path: 'hero/:heroId',
+                    path: 'heroes/:heroId',
                     element: <Hero />
                 },
+            ],
 
-            ]
         },
         {
             path: 'login',
-            element:
-                <PublicRoute>
-                    <LoginPage />
-                </PublicRoute>
+            element: <PublicRoute />,
+            children: [
+                {
+                    index: true,
+                    element: <LoginPage />
+                },
+                {
+                    path: '*',
+                    element: <Navigate to={'/'} replace={true} />
+                }
+                
+            ]
         },
+        {
+            path: '*',
+            element: <Navigate to={'/'} replace={true} />
+        }
     ],
 )
 

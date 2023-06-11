@@ -1,12 +1,11 @@
-import { Outlet } from "react-router-dom"
 import { Navbar } from "../../ui"
 
-export const HeroesPage = () => {
+export const HeroesPage = ({ children }) => {
     return (
         <>
             <Navbar />
             <div className="container">
-                <Outlet />
+                { children }
             </div>
         </>
     )
